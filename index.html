@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marudhara Masale | Farm-Fresh Spices from Rajasthan</title>
 <meta name="description" content="Farm-fresh jeera, saunf, kasuri methi and more, grown in Rajasthan and delivered across India. Order on WhatsApp.">
+<link rel="icon" type="image/png" href="images/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
@@ -35,7 +36,7 @@ section{padding:72px 0}
 header{position:sticky;top:0;z-index:50;background:rgba(251,245,230,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(59,42,26,.08)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
 .logo{min-width:0;display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:800;font-size:1.25rem;color:var(--green-d)}
-.logo svg{width:42px;height:42px}
+.logo-img{width:auto;height:42px;flex-shrink:0}
 .logo small{display:block;font:500 .6rem 'Poppins';letter-spacing:.2em;color:var(--chilli);text-transform:uppercase;margin-top:-3px}
 nav ul{display:flex;gap:22px;list-style:none;font-weight:500;font-size:.92rem}
 nav a:hover{color:var(--chilli)}
@@ -144,6 +145,9 @@ footer{background:var(--brown);color:#e9dec6;padding:44px 0 90px;font-size:.88re
 .foot{display:grid;grid-template-columns:2fr 1fr;gap:30px}
 footer h4{color:#fff;margin-bottom:10px;font-family:'Playfair Display',serif}
 footer a{display:block;margin-bottom:6px;opacity:.85}footer a:hover{opacity:1;color:var(--turmeric)}
+footer a.foot-logo{opacity:1}
+.foot-logo{display:inline-block;background:var(--cream);border-radius:14px;padding:10px 14px;margin-bottom:14px}
+.foot-logo img{width:180px;height:auto}
 .copy{border-top:1px solid rgba(255,255,255,.15);margin-top:28px;padding-top:16px;text-align:center;font-size:.78rem;opacity:.8}
 
 /* floating wa */
@@ -185,7 +189,7 @@ footer a{display:block;margin-bottom:6px;opacity:.85}footer a:hover{opacity:1;co
   .nav{height:60px;gap:8px}
   nav{top:60px}
   .logo{font-size:1rem;gap:8px;flex:1}
-  .logo svg{width:34px;height:34px;flex-shrink:0}
+  .logo-img{height:36px}
   .logo > div{line-height:1.1;min-width:0}
   .logo small{display:none}
   .nav-right{gap:6px}
@@ -245,7 +249,7 @@ footer a{display:block;margin-bottom:6px;opacity:.85}footer a:hover{opacity:1;co
 }
 @media(max-width:380px){
   .logo{font-size:.85rem;gap:6px}
-  .logo svg{width:30px;height:30px}
+  .logo-img{height:32px}
   .lang button{padding:5px 6px;font-size:.75rem}
   .cart-btn{padding:7px 9px}
   .nav-right{gap:4px}
@@ -260,13 +264,7 @@ footer a{display:block;margin-bottom:6px;opacity:.85}footer a:hover{opacity:1;co
 <header>
   <div class="wrap nav">
     <a href="#home" class="logo" aria-label="Brand">
-      <!-- LOGO (replace with your own later) -->
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <circle cx="32" cy="32" r="30" fill="#2f5d34"/>
-        <circle cx="32" cy="27" r="11" fill="#e3a21a"/>
-        <path d="M2 44c10-8 18-8 30 0s20 8 30 0v8a30 30 0 0 1-60 0z" fill="#f3e7c9"/>
-        <path d="M32 50V34M32 42c-5-1-8-4-9-8 5 0 8 3 9 8zm0-4c5-1 8-4 9-8-5 0-8 3-9 8z" stroke="#2f5d34" stroke-width="2.2" fill="#2f5d34" stroke-linecap="round"/>
-      </svg>
+      <img class="logo-img" src="images/logo-icon.png" alt="Marudhara Masale logo" width="44" height="40">
       <div><span class="brand-name">Marudhara Masale</span><small data-i18n="tag">Farm to Kitchen</small></div>
     </a>
     <nav id="nav">
@@ -487,9 +485,8 @@ footer a{display:block;margin-bottom:6px;opacity:.85}footer a:hover{opacity:1;co
 <footer>
   <div class="wrap foot">
     <div>
-      <h4 class="brand-name">Marudhara Masale</h4>
+      <a href="#home" class="foot-logo"><img src="images/logo.png" alt="Marudhara Masale - Authentic spices of Rajasthan" width="200"></a>
       <p data-i18n="ft_about">Farm-fresh spices grown in Rajasthan and delivered across India.</p>
-      <p style="margin-top:10px">FSSAI Lic. No.: <span id="fssai">[to be added]</span></p>
     </div>
     <div>
       <h4 data-i18n="ft_links">Quick links</h4>
@@ -525,7 +522,6 @@ const CONFIG = {
   phone: "+91 93528 62204",          // dummy: replace
   whatsapp: "919352862204",          // country code + number, no + or spaces (dummy: replace)
   address: "Merta Road, Rajasthan, India",
-  fssai: "",                         // add your FSSAI licence number when you get it
 };
 /* Price per kg (Rs). Small packs get a small premium automatically. */
 const PRODUCTS = [
@@ -669,7 +665,6 @@ const hello = `Hello ${CONFIG.brand}, I would like to order spices.`;
 ["#heroWa","#fab","#cWa"].forEach(s=>$(s).href=waLink(hello));
 $("#shipWa").href=waLink("Hello, I want to know about delivery charges to my location.");
 $("#addrTxt").textContent=CONFIG.address;
-if(CONFIG.fssai) $("#fssai").textContent=CONFIG.fssai;
 $("#yr").textContent=new Date().getFullYear();
 
 /* ---------- events ---------- */
