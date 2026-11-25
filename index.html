@@ -3,8 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marudhara Masale | Farm-Fresh Spices from Rajasthan</title>
-<meta name="description" content="Farm-fresh jeera, saunf, kasuri methi and more, grown in Rajasthan and delivered across India. Order on WhatsApp.">
+<title>Marudhara Masale | Farm-Fresh Jeera, Saunf &amp; Kasuri Methi from Rajasthan</title>
+<meta name="description" content="Buy farm-fresh jeera, saunf and kasuri methi grown in Rajasthan. Sun-dried, cleaned and packed by us. Delivery across India. Order easily on WhatsApp.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#2f5d34">
+<link rel="canonical" href="https://marudharamasale.in/">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn previews) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marudhara Masale">
+<meta property="og:title" content="Marudhara Masale | Farm-Fresh Jeera, Saunf &amp; Kasuri Methi from Rajasthan">
+<meta property="og:description" content="Buy farm-fresh jeera, saunf and kasuri methi grown in Rajasthan. Sun-dried, cleaned and packed by us. Delivery across India. Order easily on WhatsApp.">
+<meta property="og:url" content="https://marudharamasale.in/">
+<meta property="og:image" content="https://marudharamasale.in/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Marudhara Masale - Authentic spices of Rajasthan">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marudhara Masale | Farm-Fresh Jeera, Saunf &amp; Kasuri Methi from Rajasthan">
+<meta name="twitter:description" content="Buy farm-fresh jeera, saunf and kasuri methi grown in Rajasthan. Sun-dried, cleaned and packed by us. Delivery across India. Order easily on WhatsApp.">
+<meta name="twitter:image" content="https://marudharamasale.in/images/og-image.jpg">
+
+<!-- Structured data (helps Google show business details) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Marudhara Masale",
+  "description": "Farm-fresh jeera, saunf and kasuri methi grown in Rajasthan, sun-dried, cleaned and packed on the farm. Delivery across India.",
+  "url": "https://marudharamasale.in/",
+  "logo": "https://marudharamasale.in/images/logo.png",
+  "image": "https://marudharamasale.in/images/og-image.jpg",
+  "telephone": "+919352862204",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Merta Road",
+    "addressRegion": "Rajasthan",
+    "addressCountry": "IN"
+  },
+  "areaServed": { "@type": "Country", "name": "India" },
+  "knowsAbout": ["Jeera (cumin)", "Saunf (fennel)", "Kasuri methi (fenugreek leaves)"]
+}
+</script>
 <link rel="icon" type="image/png" href="images/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -659,7 +702,6 @@ function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show"
 
 /* ---------- init contact info ---------- */
 document.querySelectorAll(".brand-name").forEach(e=>e.textContent=CONFIG.brand);
-document.title = CONFIG.brand+" | Farm-Fresh Spices from Rajasthan";
 $("#waTxt").textContent=CONFIG.phone;
 const hello = `Hello ${CONFIG.brand}, I would like to order spices.`;
 ["#heroWa","#fab","#cWa"].forEach(s=>$(s).href=waLink(hello));
