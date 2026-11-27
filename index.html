@@ -44,7 +44,8 @@
   "url": "https://marudharamasale.in/",
   "logo": "https://marudharamasale.in/images/logo.png",
   "image": "https://marudharamasale.in/images/og-image.jpg",
-  "telephone": "+919352862204",
+  "telephone": "+919983755758",
+  "email": "marudharamasale@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Merta Road",
@@ -190,7 +191,9 @@ details p{color:var(--muted);margin-top:10px;font-size:.9rem}
 .contact-item{display:flex;gap:14px;align-items:center;background:#fff;border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow)}
 .contact-item .ic{font-size:1.5rem}
 .contact-item small{color:var(--muted);display:block;font-size:.75rem}
-.contact-item b{font-size:.95rem}
+.contact-item b{font-size:.95rem;overflow-wrap:anywhere}
+.contact-item b.em{font-size:.9rem}
+@media(max-width:380px){.contact-item b.em{font-size:.76rem}}
 
 footer{background:var(--brown);color:#e9dec6;padding:44px 0 90px;font-size:.88rem}
 .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
@@ -199,6 +202,7 @@ footer a{display:block;margin-bottom:6px;opacity:.85}footer a:hover{opacity:1;co
 footer a.foot-logo{opacity:1}
 .foot-logo{display:inline-block;background:var(--cream);border-radius:14px;padding:10px 14px;margin-bottom:14px}
 .foot-logo img{width:180px;height:auto}
+.foot-mail{margin-top:10px;word-break:break-all;opacity:1}
 .copy{border-top:1px solid rgba(255,255,255,.15);margin-top:28px;padding-top:16px;text-align:center;font-size:.78rem;opacity:.8}
 
 /* floating wa */
@@ -353,7 +357,7 @@ footer a.foot-logo{opacity:1}
       </div>
     </div>
     <div class="hero-art">
-      <img src="images/hero.jpeg" alt="Our spice farm in Rajasthan" style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
+      <img src="images/hero.png" alt="Our spice farm in Rajasthan" style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
       <svg viewBox="0 0 400 400" aria-hidden="true">
         <circle cx="200" cy="200" r="190" fill="rgba(255,255,255,.08)"/>
         <circle cx="200" cy="150" r="70" fill="#e3a21a"/>
@@ -408,7 +412,7 @@ footer a.foot-logo{opacity:1}
 <section id="story">
   <div class="wrap story-grid">
     <div class="story-art">
-      <img src="images/farm.jpeg" alt="Our farm in Rajasthan" style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
+      <img src="images/farm.png" alt="Our farm in Rajasthan" style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
       <svg viewBox="0 0 500 380" aria-hidden="true">
         <rect width="500" height="380" fill="#f6e9c8"/>
         <circle cx="390" cy="90" r="46" fill="#e3a21a"/>
@@ -517,6 +521,7 @@ footer a.foot-logo{opacity:1}
     <div class="contact-grid">
       <div class="contact-list">
         <a class="contact-item" id="cWa" target="_blank" rel="noopener"><div class="ic">💬</div><div><small>WhatsApp</small><b id="waTxt"></b></div></a>
+        <a class="contact-item" href="mailto:marudharamasale@gmail.com"><div class="ic">✉️</div><div><small>Email</small><b class="em">marudharamasale@gmail.com</b></div></a>
         <a class="contact-item" href="https://www.instagram.com/marudhara_masale" target="_blank" rel="noopener me"><div class="ic">📸</div><div><small>Instagram</small><b>@marudhara_masale</b></div></a>
         <div class="contact-item"><div class="ic">📍</div><div><small data-i18n="c_addr">Farm address</small><b id="addrTxt"></b></div></div>
       </div>
@@ -539,6 +544,7 @@ footer a.foot-logo{opacity:1}
     <div>
       <a href="#home" class="foot-logo"><img src="images/logo.png" alt="Marudhara Masale - Authentic spices of Rajasthan" width="200"></a>
       <p data-i18n="ft_about">Farm-fresh spices grown in Rajasthan and delivered across India.</p>
+      <a class="foot-mail" href="mailto:marudharamasale@gmail.com">✉️ marudharamasale@gmail.com</a>
     </div>
     <div>
       <h4 data-i18n="ft_links">Quick links</h4>
@@ -575,8 +581,8 @@ footer a.foot-logo{opacity:1}
 /* ====================== EDIT HERE ====================== */
 const CONFIG = {
   brand: "Marudhara Masale",
-  phone: "+91 93528 62204",          // dummy: replace
-  whatsapp: "919352862204",          // country code + number, no + or spaces (dummy: replace)
+  phone: "+91 99837 55758",
+  whatsapp: "919983755758",          // country code + number, no + or spaces
   address: "Merta Road, Rajasthan, India",
 };
 /* Price per kg (Rs). Small packs get a small premium automatically. */
@@ -610,7 +616,7 @@ const T = {
   wh_t:"🏪 Wholesale / Bulk",wh1:"For kirana stores, restaurants, caterers and resellers",wh2:"Bulk packing from 5 kg up to 50 kg bags",wh3:"Special rates on request",ws_btn:"Get wholesale rates",ph_name:"Your name / business",ph_qty:"Quantity needed (kg)",
   r_eyebrow:"Customer love",r_title:"What people say",r1:"\"The jeera aroma is unlike anything from the store. Fresh and strong.\"",r2:"\"Kasuri methi tastes like homemade. We now order every month.\"",r3:"\"Great quality saunf for our restaurant. Wholesale rates were fair.\"",r_note:"* These are sample reviews. Replace them with real customer reviews.",
   q_eyebrow:"FAQ",q_title:"Common questions",q1:"How do I place an order?",q1a:"Add items to your order list and tap \"Send order on WhatsApp\". We reply with the final amount and payment details.",q2:"How are delivery charges calculated?",q2a:"Charges depend on weight and delivery location. We tell you the exact amount on WhatsApp before you pay.",q3:"How long do the spices stay fresh?",q3a:"Whole spices stay fresh for 12 months or more if kept in an airtight container, away from moisture and sunlight.",q4:"Do you sell in bulk?",q4a:"Yes. Use the wholesale form above or message us on WhatsApp for rates.",
-  c_eyebrow:"Contact",c_title:"Let's talk spices",c_sub:"Message us on WhatsApp. We reply quickly.",c_phone:"Call us",c_addr:"Farm address",c_form:"Send us a message",ph_yname:"Your name",ph_phone:"Your phone number",ph_msg:"Your message",c_send:"Send on WhatsApp",c_mail:"Send by Email",
+  c_eyebrow:"Contact",c_title:"Let's talk spices",c_sub:"Message us on WhatsApp or email. We reply quickly.",c_phone:"Call us",c_addr:"Farm address",c_form:"Send us a message",ph_yname:"Your name",ph_phone:"Your phone number",ph_msg:"Your message",c_send:"Send on WhatsApp",c_mail:"Send by Email",
   ft_about:"Farm-fresh spices grown in Rajasthan and delivered across India.",ft_links:"Quick links",ft_follow:"Follow us",fab:"Order on WhatsApp",
   cart_t:"Your Order",ph_city:"City / Pincode",subtotal:"Subtotal",delivery:"Delivery (estimate)",total:"Total (delivery extra)",send_order:"Send order on WhatsApp",empty:"Your order list is empty.",remove:"Remove",free:"Free",
   ship_line:(f,s)=>`Free delivery above ₹${f}; otherwise about ₹${s} (estimate)`},
@@ -628,7 +634,7 @@ const T = {
   wh_t:"🏪 थोक / बल्क",wh1:"किराना दुकानों, रेस्टोरेंट, कैटरर और रीसेलर के लिए",wh2:"5 किलो से 50 किलो तक बल्क पैकिंग",wh3:"अनुरोध पर विशेष दर",ws_btn:"थोक दर पाएँ",ph_name:"आपका नाम / व्यवसाय",ph_qty:"कितनी मात्रा चाहिए (किलो)",
   r_eyebrow:"ग्राहकों की राय",r_title:"लोग क्या कहते हैं",r1:"\"जीरे की खुशबू दुकान के जीरे से बिल्कुल अलग है। ताज़ा और तेज़।\"",r2:"\"कसूरी मेथी का स्वाद घर जैसा है। अब हर महीने मँगाते हैं।\"",r3:"\"हमारे रेस्टोरेंट के लिए बढ़िया सौंफ। थोक दर भी सही थी।\"",r_note:"* ये नमूना रिव्यू हैं। असली ग्राहकों के रिव्यू से बदलें।",
   q_eyebrow:"सवाल-जवाब",q_title:"आम सवाल",q1:"ऑर्डर कैसे करूँ?",q1a:"आइटम ऑर्डर लिस्ट में जोड़ें और \"WhatsApp पर ऑर्डर भेजें\" दबाएँ। हम अंतिम राशि और भुगतान की जानकारी भेजेंगे।",q2:"डिलीवरी शुल्क कैसे तय होता है?",q2a:"शुल्क वज़न और डिलीवरी की जगह पर निर्भर है। भुगतान से पहले हम WhatsApp पर सही राशि बताएंगे।",q3:"मसाले कितने समय तक ताज़ा रहते हैं?",q3a:"साबुत मसाले एयरटाइट डिब्बे में, नमी और धूप से दूर रखने पर 12 महीने या अधिक ताज़ा रहते हैं।",q4:"क्या आप थोक में बेचते हैं?",q4a:"हाँ। ऊपर थोक फ़ॉर्म भरें या WhatsApp पर दर पूछें।",
-  c_eyebrow:"संपर्क",c_title:"मसालों की बात करें",c_sub:"WhatsApp पर संदेश करें। हम जल्दी जवाब देते हैं।",c_phone:"कॉल करें",c_addr:"खेत का पता",c_form:"हमें संदेश भेजें",ph_yname:"आपका नाम",ph_phone:"आपका फ़ोन नंबर",ph_msg:"आपका संदेश",c_send:"WhatsApp पर भेजें",c_mail:"ईमेल से भेजें",
+  c_eyebrow:"संपर्क",c_title:"मसालों की बात करें",c_sub:"WhatsApp या ईमेल पर संदेश करें। हम जल्दी जवाब देते हैं।",c_phone:"कॉल करें",c_addr:"खेत का पता",c_form:"हमें संदेश भेजें",ph_yname:"आपका नाम",ph_phone:"आपका फ़ोन नंबर",ph_msg:"आपका संदेश",c_send:"WhatsApp पर भेजें",c_mail:"ईमेल से भेजें",
   ft_about:"राजस्थान में उगे ताज़ा मसाले, पूरे भारत में डिलीवरी।",ft_links:"त्वरित लिंक",ft_follow:"हमें फॉलो करें",fab:"WhatsApp पर ऑर्डर करें",
   cart_t:"आपका ऑर्डर",ph_city:"शहर / पिनकोड",subtotal:"उप-कुल",delivery:"डिलीवरी (अनुमानित)",total:"कुल (डिलीवरी अलग)",send_order:"WhatsApp पर ऑर्डर भेजें",empty:"आपकी ऑर्डर लिस्ट खाली है।",remove:"हटाएँ",free:"मुफ़्त",
   ship_line:(f,s)=>`₹${f} से ऊपर डिलीवरी मुफ़्त; अन्यथा लगभग ₹${s} (अनुमानित)`}
