@@ -52,7 +52,7 @@
     "addressRegion": "Rajasthan",
     "addressCountry": "IN"
   },
-  "sameAs": ["https://www.instagram.com/marudhara_masale"],
+  "sameAs": ["https://www.instagram.com/marudhara_masale", "https://www.facebook.com/share/1CZxGE6g7n/"],
   "areaServed": { "@type": "Country", "name": "India" },
   "knowsAbout": ["Jeera (cumin)", "Saunf (fennel)", "Kasuri methi (fenugreek leaves)"]
 }
@@ -357,7 +357,7 @@ footer a.foot-logo{opacity:1}
       </div>
     </div>
     <div class="hero-art">
-      <img src="images/hero.jpeg" alt="Our spice farm in Rajasthan" style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
+      <img data-base="images/hero" alt="Our spice farm in Rajasthan" style="display:none">
       <svg viewBox="0 0 400 400" aria-hidden="true">
         <circle cx="200" cy="200" r="190" fill="rgba(255,255,255,.08)"/>
         <circle cx="200" cy="150" r="70" fill="#e3a21a"/>
@@ -390,7 +390,7 @@ footer a.foot-logo{opacity:1}
     <h2 class="title" data-i18n="p_title">Fresh from the field to your kitchen</h2>
     <p class="sub" data-i18n="p_sub">Pick a pack size, add to your order and send it to us on WhatsApp. We confirm the total with delivery charges.</p>
     <div class="grid" id="productGrid" style="text-align:left"></div>
-    <p class="note" data-i18n="p_note">* Prices shown are sample prices and can change with harvest and season.</p>
+    <p class="note" data-i18n="p_note">Prices are per pack, in ₹. Delivery charges are extra and confirmed on WhatsApp.</p>
   </div>
 </section>
 
@@ -412,7 +412,7 @@ footer a.foot-logo{opacity:1}
 <section id="story">
   <div class="wrap story-grid">
     <div class="story-art">
-      <img src="images/farm.jpeg" alt="Our farm in Rajasthan" style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
+      <img data-base="images/farm" alt="Our farm in Rajasthan" style="display:none">
       <svg viewBox="0 0 500 380" aria-hidden="true">
         <rect width="500" height="380" fill="#f6e9c8"/>
         <circle cx="390" cy="90" r="46" fill="#e3a21a"/>
@@ -522,6 +522,7 @@ footer a.foot-logo{opacity:1}
       <div class="contact-list">
         <a class="contact-item" id="cWa" target="_blank" rel="noopener"><div class="ic">💬</div><div><small>WhatsApp</small><b id="waTxt"></b></div></a>
         <a class="contact-item" href="mailto:marudharamasale@gmail.com"><div class="ic">✉️</div><div><small>Email</small><b class="em">marudharamasale@gmail.com</b></div></a>
+        <a class="contact-item" href="https://www.facebook.com/share/1CZxGE6g7n/" target="_blank" rel="noopener me"><div class="ic">📘</div><div><small>Facebook</small><b>Marudhara Masale</b></div></a>
         <a class="contact-item" href="https://www.instagram.com/marudhara_masale" target="_blank" rel="noopener me"><div class="ic">📸</div><div><small>Instagram</small><b>@marudhara_masale</b></div></a>
         <div class="contact-item"><div class="ic">📍</div><div><small data-i18n="c_addr">Farm address</small><b id="addrTxt"></b></div></div>
       </div>
@@ -556,6 +557,7 @@ footer a.foot-logo{opacity:1}
     <div>
       <h4 data-i18n="ft_follow">Follow us</h4>
       <a href="https://www.instagram.com/marudhara_masale" target="_blank" rel="noopener me">Instagram</a>
+      <a href="https://www.facebook.com/share/1CZxGE6g7n/" target="_blank" rel="noopener me">Facebook</a>
     </div>
   </div>
   <div class="wrap copy">© <span id="yr"></span> <span class="brand-name">Marudhara Masale</span>. All rights reserved.</div>
@@ -587,13 +589,13 @@ const CONFIG = {
 };
 /* Price per kg (Rs). Small packs get a small premium automatically. */
 const PRODUCTS = [
-  {id:"jeera", perKg:520, color:"#7a5a33", shape:"curve", img:"images/jeera.png",
+  {id:"jeera", perKg:520, color:"#7a5a33", shape:"curve", img:"images/jeera",
     name:{en:"Jeera (Cumin)", hi:"जीरा"},
     desc:{en:"Strongly aromatic whole cumin seeds, sun-dried and hand-cleaned. Perfect for tadka and masalas.", hi:"तेज़ खुशबू वाला साबुत जीरा, धूप में सुखाया और साफ किया हुआ। तड़के और मसालों के लिए बढ़िया।"}},
-  {id:"saunf", perKg:480, color:"#8aa14a", shape:"long", img:"images/saunf.png",
+  {id:"saunf", perKg:480, color:"#8aa14a", shape:"long", img:"images/saunf",
     name:{en:"Saunf (Fennel)", hi:"सौंफ"},
     desc:{en:"Sweet, green fennel seeds. Great as a mouth freshener and in curries and pickles.", hi:"मीठी, हरी सौंफ। माउथ फ्रेशनर, सब्ज़ी और अचार के लिए उत्तम।"}},
-  {id:"methi", perKg:360, color:"#4f7d3a", shape:"leaf", img:"images/methi.png",
+  {id:"methi", perKg:360, color:"#4f7d3a", shape:"leaf", img:"images/methi",
     name:{en:"Pan Methi (Kasuri Methi)", hi:"पान मेथी (कसूरी मेथी)"},
     desc:{en:"Dried fenugreek leaves with a rich, earthy aroma. Lifts any gravy, paratha or dal.", hi:"सूखी मेथी की पत्तियाँ, गहरी सुगंध वाली। ग्रेवी, पराठा और दाल का स्वाद बढ़ाएँ।"}}
 ];
@@ -607,7 +609,7 @@ const T = {
   hero_p:"Jeera, saunf, kasuri methi and more. Grown, sun-dried, cleaned and packed by us in Rajasthan, and delivered anywhere in India.",
   order_wa:"Order on WhatsApp",see_products:"See Products",b1:"🌾 Farm-direct",b2:"☀️ Sun-dried",b3:"🚫 No adulteration",
   s1b:"100% Farm-grown",s1:"Our own fields, Rajasthan",s2b:"Fresh Harvest",s2:"Packed in small batches",s3b:"Pan-India Delivery",s3:"Shipping charges apply",s4b:"Wholesale Available",s4:"For shops & restaurants",
-  p_eyebrow:"Our Spices",p_title:"Fresh from the field to your kitchen",p_sub:"Pick a pack size, add to your order and send it to us on WhatsApp. We confirm the total with delivery charges.",p_note:"* Prices shown are sample prices and can change with harvest and season.",
+  p_eyebrow:"Our Spices",p_title:"Fresh from the field to your kitchen",p_sub:"Pick a pack size, add to your order and send it to us on WhatsApp. We confirm the total with delivery charges.",p_note:"Prices are per pack, in ₹. Delivery charges are extra and confirmed on WhatsApp.",
   add:"Add to order",added:"Added to order",
   w_eyebrow:"Why choose us",w_title:"Purity you can taste",f1t:"Grown by us",f1:"We farm the spices ourselves, so we know exactly how they were grown.",f2t:"Naturally sun-dried",f2:"Dried in the Rajasthan sun to lock in aroma and flavour.",f3t:"Cleaned & sorted",f3:"Hand-sorted and cleaned, with no added colour or fillers.",f4t:"Sealed fresh",f4:"Packed in airtight pouches to keep the aroma intact.",
   st_eyebrow:"Our Farm",st_title:"From the soil of Rajasthan",st1:"Rajasthan's dry climate and mineral-rich soil are ideal for spices like jeera, saunf and methi. For years our family has grown these crops on our own land.",st2:"Now we are bringing them directly to your kitchen. There are no middlemen, no mixing and no shortcuts, just spices as they should be.",st_btn:"Talk to the farmer",
@@ -625,7 +627,7 @@ const T = {
   hero_p:"जीरा, सौंफ, कसूरी मेथी और बहुत कुछ। हम राजस्थान में उगाते, धूप में सुखाते, साफ करते और पैक करते हैं, और पूरे भारत में भेजते हैं।",
   order_wa:"WhatsApp पर ऑर्डर करें",see_products:"उत्पाद देखें",b1:"🌾 सीधे खेत से",b2:"☀️ धूप में सुखाया",b3:"🚫 कोई मिलावट नहीं",
   s1b:"100% खेत में उगा",s1:"राजस्थान में हमारे अपने खेत",s2b:"ताज़ी फसल",s2:"छोटे बैच में पैक",s3b:"पूरे भारत में डिलीवरी",s3:"शिपिंग शुल्क लागू",s4b:"थोक उपलब्ध",s4:"दुकानों व रेस्टोरेंट के लिए",
-  p_eyebrow:"हमारे मसाले",p_title:"खेत से सीधे आपकी रसोई तक",p_sub:"पैक साइज़ चुनें, ऑर्डर में जोड़ें और WhatsApp पर हमें भेजें। हम डिलीवरी शुल्क के साथ कुल राशि बताएंगे।",p_note:"* दिखाए गए दाम नमूना हैं और फसल व मौसम के अनुसार बदल सकते हैं।",
+  p_eyebrow:"हमारे मसाले",p_title:"खेत से सीधे आपकी रसोई तक",p_sub:"पैक साइज़ चुनें, ऑर्डर में जोड़ें और WhatsApp पर हमें भेजें। हम डिलीवरी शुल्क के साथ कुल राशि बताएंगे।",p_note:"दाम प्रति पैक के हैं (₹ में)। डिलीवरी शुल्क अलग है और WhatsApp पर बताया जाएगा।",
   add:"ऑर्डर में जोड़ें",added:"ऑर्डर में जुड़ गया",
   w_eyebrow:"हमें क्यों चुनें",w_title:"शुद्धता जो स्वाद में दिखे",f1t:"हमारे अपने खेत",f1:"हम मसाले खुद उगाते हैं, इसलिए हमें पता है कि वे कैसे उगे।",f2t:"प्राकृतिक धूप में सुखाए",f2:"राजस्थान की धूप में सुखाए गए, ताकि खुशबू और स्वाद बना रहे।",f3t:"साफ और छंटे हुए",f3:"हाथ से छांटे और साफ किए, कोई रंग या मिलावट नहीं।",f4t:"ताज़ा सीलबंद",f4:"खुशबू बनाए रखने के लिए एयरटाइट पाउच में पैक।",
   st_eyebrow:"हमारा खेत",st_title:"राजस्थान की मिट्टी से",st1:"राजस्थान की सूखी जलवायु और खनिज-समृद्ध मिट्टी जीरा, सौंफ और मेथी जैसे मसालों के लिए बहुत अच्छी है। हमारा परिवार वर्षों से अपनी ज़मीन पर ये फसलें उगा रहा है।",st2:"अब हम इन्हें सीधे आपकी रसोई तक पहुँचा रहे हैं। कोई बिचौलिया नहीं, कोई मिलावट नहीं, बस असली मसाले।",st_btn:"किसान से बात करें",
@@ -651,10 +653,22 @@ const priceOf = (p,g)=>Math.round(p.perKg*g/1000*PREMIUM[g]/5)*5;
 const sizeLabel = g=> g>=1000 ? (g/1000)+" kg" : g+" g";
 const waLink = txt=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(txt)}`;
 
+/* ---------- photo loader: finds images/<name>.jpg, .jpeg, .png or .webp automatically ---------- */
+const EXTS=["jpg","jpeg","png","webp"], FOUND={};
+function loadImg(im,base,ok,fail){
+  let i=FOUND[base]?EXTS.indexOf(FOUND[base]):0;
+  im.onload=()=>{FOUND[base]=EXTS[i];ok&&ok()};
+  im.onerror=()=>{i++; if(i<EXTS.length) im.src=base+"."+EXTS[i]; else fail&&fail()};
+  im.src=base+"."+EXTS[i];
+}
+document.querySelectorAll("img[data-base]").forEach(im=>loadImg(im,im.dataset.base,
+  ()=>{im.style.display="block";if(im.nextElementSibling)im.nextElementSibling.style.display="none"},
+  ()=>im.remove()));
+
 /* ---------- product art (placeholder until real photos) ---------- */
 function rng(seed){let s=seed;return()=>((s=Math.imul(s^s>>>15,1|s))>>>0)/4294967296}
 function art(p){
-  if(p.img) return `<img src="${p.img}" alt="${p.name.en}" loading="lazy">`;
+  if(p.img) return `<img data-base="${p.img}" alt="${p.name.en}">`;
   return artSvg(p);
 }
 function artSvg(p){
@@ -694,7 +708,7 @@ function renderProducts(){
         </div>
       </div>
     </article>`).join("");
-  document.querySelectorAll("#productGrid .pic img").forEach((im,i)=>{im.onerror=()=>{im.parentNode.innerHTML=artSvg(PRODUCTS[i])};});
+  document.querySelectorAll("#productGrid .pic img").forEach((im,i)=>loadImg(im,im.dataset.base,()=>{},()=>{im.parentNode.innerHTML=artSvg(PRODUCTS[i])}));
 }
 function renderCart(){
   const box=$("#cartItems");
